@@ -3,8 +3,11 @@
   <head>
     <meta charset="utf-8">
     <title>Where's Monet?</title>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
     <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="index.css">
@@ -19,11 +22,52 @@
      <li><a href="#">About Us</a></li>
    </ul>
  </div>
- <div id='monet_intro'>
- </header>
-    <h1>Oscar-Claude Monet</h1>
-<p>Oscar-Claude Monet (/moʊˈneɪ/; French: [klod mɔnɛ]; 14 November 1840 – 5 December 1926) was a founder of French Impressionist painting, and the most consistent and prolific practitioner of the movement's philosophy of expressing one's perceptions before nature, especially as applied to plein-air landscape painting. The term "Impressionism" is derived from the title of his painting Impression, soleil levant (Impression, Sunrise), which was exhibited in 1874 in the first of the independent exhibitions mounted by Monet and his associates as an alternative to the Salon de Paris.</p>
+
+ <div class="container">
+  <div id="myCarousel" class="carousel slide">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li class="item1 active"></li>
+      <li class="item2"></li>
+      <li class="item3"></li>
+      <li class="item4"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+
+      <div class="item active">
+        <img src="MonetHeader.jpg" alt="Chania" width="1000" height="345">
+      </div>
+
+      <div class="item">
+        <img src="MonetSlide2.jpg" alt="Chania" width="1000" height="345">
+      </div>
+
+      <div class="item">
+        <img src="MonetSlide3.jpg" alt="Flower" width="1000" height="345">
+      </div>
+
+      <div class="item">
+        <img src="MonetHeader.jpg" alt="Flower" width="1000" height="345">
+      </div>
+
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button">
+      <span class="icon-prev" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button">
+      <span class="icon-next" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
 </div>
+
+ </header>
+
 <div id='timeline'>
 
 </div>
@@ -64,13 +108,13 @@
       </div>
     </div>
     <div class="timeline-item" data-text="WATER LILIES">
-      <div class="timeline__content"><img class="timeline__img" src="#"/>
+      <div class="timeline__content"><img class="timeline__img" src="http://wilsonkelseydesign.com/wp-content/uploads/2015/10/monet-waterlilies-source-unknown-e1445855440747.jpg"/>
         <h2 class="timeline__content-title">1916</h2>
         <p class="timeline__content-desc">Begins working on large <i> Water Lilies</i>, including panorama paintings and triptychs.</p>
       </div>
     </div>
     <div class="timeline-item" data-text="DEATH">
-      <div class="timeline__content"><img class="timeline__img" src="#"/>
+      <div class="timeline__content"><img class="timeline__img" src="https://upload.wikimedia.org/wikipedia/commons/9/97/1920-22_Claude_Monet_The_Japanese_Footbridge_MOMA_NY_anagoria.JPG"/>
         <h2 class="timeline__content-title">1926</h2>
         <p class="timeline__content-desc">Passes away on December 5th from lung cancer at age 86.</p>
       </div>
@@ -79,9 +123,8 @@
 </div>
 <div class="demo-footer"><a href="#" target="_blank">Source:Wikipedia</a></div>
 
-<script src='js/jquery-3.3.1.js'></script>
-
   <script src="js/script.js"></script>
+
   </body>
 
 </html>
