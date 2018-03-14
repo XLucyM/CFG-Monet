@@ -29,7 +29,7 @@ header {
   }
 
   .header ul {
-      padding: 20px;
+      padding: 10px;
       background: rgba(255,255,255,.5);
       margin: 0px;
     }
@@ -38,7 +38,19 @@ header {
       padding: 0px 10px 0px 10px;
       margin: 0px;
     }
+    .header a {
+    padding: 15px;
+    }
+      .header a:hover {
+      background-color: rgba(242, 242, 242,.25)
+
+      }
+
   #About {
     color: rgba(0,77,40,1);
     font-family: 'Merienda', cursive;
+  }
+
+  .footer {
+      background: rgba(240,255,255,.5);
   }
