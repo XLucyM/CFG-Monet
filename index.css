@@ -2,7 +2,7 @@ header {
     text-align: left;
     background-size: cover;
     color: white;
-    height: 650px;
+    height: 620px;
     font-family: 'Cabin Sketch', cursive;
     margin: 0px;
     padding: 0px;
@@ -10,6 +10,7 @@ header {
     font-size: 40px;
   }
 
+}
   body {
     background: rgba(242, 255, 230,1);
     background-attachment:fixed;
@@ -26,7 +27,7 @@ header {
       width:100%;
       margin: auto 0;
       padding:0px;
-      height:590px;
+      height:560px;
   }
 
 #header {
@@ -40,7 +41,7 @@ header {
 
 
 .header ul {
-    padding: 20px;
+    padding: 10px;
     background: rgba(255,255,255,.5);
     margin: 0px;
   }
@@ -49,13 +50,25 @@ header {
     padding: 0px 10px 0px 10px;
     margin: 0px;
   }
+.header a {
+padding: 15px;
+}
+  .header a:hover {
+  background-color: rgba(242, 242, 242,.25)
+
+  }
 
 .myCarousel {
   margin:0px;
   padding: 0px;
   width: 100%;
 }
-
+.container {
+  width:100%;
+  background-size: cover;
+  margin: 0px;
+  padding: 0px;
+}
   @import url("https://fonts.googleapis.com/css?family=Cardo|Pathway+Gothic+One");
 .timeline {
   display: flex;
