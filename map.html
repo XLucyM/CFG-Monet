@@ -63,8 +63,9 @@
 
       google.maps.event.addListener(marker, 'click', (function(marker, i) {
         return function() {
-          var content = '<h2>' + locations[i][0] + '</h2>' + "<br>" + locations[i][4] + '<br>' +
-                      locations[i][5] + '<br>' + locations[i][6]
+          var content = '<h2>' + locations[i][0] + '</h2>' + '<br>' + locations[i][4] + '<br>' +
+                      locations[i][5] + '<br>'
+
           infowindow.setContent(content);
           infowindow.open(map, marker);
         }
