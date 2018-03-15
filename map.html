@@ -1,22 +1,27 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Where's Monet?</title>
+<head>
 
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="map.css">
 
-  </head>
+  <meta charset="utf-8">
+  <title>Where's Monet?</title>
+
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=Cabin+Sketch" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="map.css">
+
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBncfGIPBoeiFz1JVv96dLXY3UCsSjdN5w&callback=initMap"></script>
+
+</head>
 
 <body>
-  <header>
-    <div id='header' class='header'>
+ <header>
+    <div id='headers' class='headers'>
  <ul>
    <li>Where's Monet?</li>
    <li><a href="index.html">About Monet</a></li>
@@ -24,79 +29,47 @@
    <li><a href="about.html">About Us</a></li>
  </ul>
 </div>
+</header>
+
+  <h1 class="words">The Monet Map</h1>
+
+    <div id="map" style="width:100%;height:510px"></div>
+    <script type="text/javascript">
 
 
-<h1 class="words">The Monet Map</h1>
-
-<div id="googleMap" style="width:100%;height:510px;"></div>
-<script type="text/javascript">
-
-
-
-  var locations = [
-    ['Impression, Sunrise 1872', 57.492214, 8.195801, 4,'Marmottan Monet Museum; 2 Rue Louis Boilly, 75016 Paris, France', 'Link', '<a href="http://www.marmottan.fr/uk/Claude_Monet_-musee-2517">'+
-      'Link to museum website</a>'],
-    ['Woman with a Parasol 1875', 48.224673, -70.817871, 5,'National Gallery of Art; 567-621 Madison Dr NW, Washington, DC 20565, USA', 'Link', '<a href="https://www.nga.gov/collection/art-object-page.61379.html">'+'Find them here</a>'],
-    ['Water Lilies and Japanese Bridge 1890', 48.400032, -69.543457, 3, 'Princeton University Art Museum; McCosh Walk, Princeton, NJ 08542, USA', 'Link', '<a href="http://artmuseum.princeton.edu/collections/objects/31852">'+'Find them here</a>'],
-  ];
-
-
-  function initMap() {
-  var mapProp= {
-      center:new google.maps.LatLng(51.508742,-0.120850),
-      zoom:5,
-  };
-  var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-  }
+    var locations = [
+      ['Impression, Sunrise 1872', 48.859266, 2.267231, 4,'Marmottan Monet Museum; 2 Rue Louis Boilly, 75016 Paris, France', '<a href="http://www.marmottan.fr/uk/Claude_Monet_-musee-2517">'+ 'Link to museum website</a>' + '<img src="impressions.png">' + '</a>'],
+      ['Woman with a Parasol 1875',38.891298, -77.019965, 5,'National Gallery of Art; 567-621 Madison Dr NW, Washington, DC 20565, USA', '<a href="https://www.nga.gov/collection/art-object-page.61379.html">'+'Link to museum website</a>' + '<img src="woman.png">' + '</a>'],
+      ['Water Lilies and Japanese Bridge 1890', 40.347476, -74.658108, 3, 'Princeton University Art Museum; McCosh Walk, Princeton, NJ 08542, USA', '<a href="http://artmuseum.princeton.edu/collections/objects/31852">'+'Link to museum website</a>' + '<img src="bridge.png">' + '</a>'],
+    ];
 
 
 
-
-
-  // var map = new google.maps.Map(document.getElementById('googleMap'), {
-  //   zoom: 5,
-  //   center: new google.maps.LatLng(51.508742,-0.120850),
-  //   mapTypeId: google.maps.MapTypeId.ROADMAP
-  // });
-
-
-    var infoWindow;
-    function initMap() {
-       infoWindow = new google.maps.InfoWindow();
-    }
-
-
-  //
-  // var infowindow = new google.maps.InfoWindow({
-  //   content: content
-  // });
-
-
-  var marker, i;
-
-  for (i = 0; i < locations.length; i++) {
-      marker = new google.maps.Marker({
-      position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-      map: googleMap
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 3,
+      center: new google.maps.LatLng(51.507351, -0.127758),
+      mapTypeId: google.maps.MapTypeId.ROADMAP
     });
 
+    var infowindow = new google.maps.InfoWindow();
 
+    var marker, i;
 
-    google.maps.event.addListener(marker, 'click', (function(marker, i) {
-      return function() {
-        var content = '<h2>' + locations[i][0] + '</h2>' + "<br>" + '<h4>' + 'Description' + '</h4>' + "<br>" + locations[i][4] + '<br>' +
-                      + locations[i][5] + '<br>' + '<br>' + '<br>' +
-                      locations[i][6];
-        infowindow.setContent(content);
-        infowindow.open(googleMap, marker);
-      }
-    })(marker, i));
-  }
+    for (i = 0; i < locations.length; i++) {
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        map: map
+      });
 
-</script>
-
-
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBncfGIPBoeiFz1JVv96dLXY3UCsSjdN5w&callback=initMap"></script>
-
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          var content = '<h2>' + locations[i][0] + '</h2>' + "<br>" + locations[i][4] + '<br>' +
+                      locations[i][5] + '<br>' + locations[i][6]
+          infowindow.setContent(content);
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
+    }
+  </script>
 </body>
 </html>
